@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="./style.css">
+    <title>To do list</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__items">
+          <main class="main__content">
+    <header class="content__header">
+        <h1>Mahissa's To Do List</h1>
+        <ul class="nav__lists">
+            <li class="nav__list" title="Add task">
+              <i
+                class="fa fa-plus"
+                aria-hidden="true"
+                onclick="toggleForm()"
+              ></i>
+            </li>
+            <li class="nav__list" title="List view">
+              <i
+                class="fa fa-th-list"
+                aria-hidden="true"
+                onclick="toggleList()"
+              ></i>
+            </li>
+            <li class="nav__list" title="Grid view">
+              <i
+                class="fa fa-th-large"
+                aria-hidden="true"
+                onclick="toggleGrid()"
+              ></i>
+            </li>
+          </ul>
+    </header>
+    <div class="content__body">
+        <div class="content__row">
+          <div class="content__title">My Tasks</div>
+          <select id="filterDropdown">
+            <option value="all" selected>All</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">Uncompleted</option>
+        </select>
+          <div class="row__items">
+            <!-- javascript -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+    <div class="float__card" style="display: none">
+        <div class="float__content">
+          <h3 class="float__header">Add Task</h3>
+          <div class="form__wrapper">
+            <div class="form__group">
+              <label for="name"> Enter a task name</label>
+              <input type="text" id="name" placeholder="Enter a title" />
+            </div>
+            <div class="form__group">
+              <label for="name"> Select a tag</label>
+              <div class="select__lists">
+                <div
+                  onclick="selectTag(event)"
+                  class="select bgI"
+                  title="Sports"
+                ></div>
+                <div
+                  onclick="selectTag(event)"
+                  class="select bgII"
+                  title="Shopping"
+                ></div>
+                <div
+                  onclick="selectTag(event)"
+                  class="select bgIII"
+                  title="Game"
+                ></div>
+                <div
+                  onclick="selectTag(event)"
+                  class="select bgIV"
+                  title="Education"
+                ></div>
+                <div
+                  onclick="selectTag(event)"
+                  class="select bgIV"
+                  title="Game"
+                ></div>
+                <div
+                  onclick="selectTag(event)"
+                  class="select bgV"
+                  title="Party"
+                ></div>
+              </div>
+            </div>
+            <div class="form__group">
+              <label for="desc"> Add a description</label>
+              <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form__group">
+              <label for="time"> Add a time</label>
+              <input type="datetime-local" name="time" id="time" />
+            </div>
+
+            <div class="form__group actions">
+              <button class="cancel" onclick="closeForm()">Cancel</button>
+              <button class="submit" onclick="submitForm()">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Copyright ©2024 All rights reserved. To do list</p>
+      <ul class="social__links">
+        <li class="link">
+          <i class="fa-brands fa-instagram"></i>
+        </li>
+        <li class="link">
+          <i class="fa-brands fa-facebook"></i>
+        </li>
+        <li class="link">
+          <i class="fa-brands fa-twitter"></i>
+        </li>
+        <li class="link">
+          <i class="fa-brands fa-youtube"></i>
+        </li>
+      </ul>
+    </footer>
+  <script src="./app.js"></script>  
+</body>
+</html>
